@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-racing-green: #004225;
+  --color-racing-dark: #0b1f1a;
+  --color-racing-red: #e10600;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-racing: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-racing-dark text-white font-sans;
+  }
+}
+
+.speed-line {
+  @apply absolute h-[2px] bg-racing-red/50;
+  animation: speed-move 2s linear infinite;
+}
+
+@keyframes speed-move {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
